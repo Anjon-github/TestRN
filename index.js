@@ -13,4 +13,4 @@ import TestPro from './app/TestProgress';
 // AppRegistry.registerComponent('TestRN', () => Network);
 // AppRegistry.registerComponent('TestRN', () => Touch);
 // AppRegistry.registerComponent('TestRN', () => List);
-AppRegistry.registerComponent('TestRN', () => TestPro);
+AppRegistry.registerComponent('TestRN', () => List);

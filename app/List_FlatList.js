@@ -1,8 +1,26 @@
 
 import React, {Component} from "react";
-import {FlatList, Text, View, StyleSheet} from "react-native";
+import {FlatList, Text, View, StyleSheet, TouchableOpacity} from "react-native";
+import AlertSelect from "./AlertSelect";
+
+const selectedArr = ["拍照", "图库"];
 
 export default class FlatListBasics extends Component{
+
+
+    showAlertSelected(){
+        this.dialog.show("请选择照片", selectedArr, '#333333', this.callbackSelected);
+    }
+
+    // 回调
+    callbackSelected(i){
+        switch (i){
+            case 0: // 拍照
+                break;
+            case 1: // 图库
+                break;
+        }
+    }
 
     render(){
         return(
@@ -35,6 +53,16 @@ export default class FlatListBasics extends Component{
                         ({item}) => <Text style={mystyle.item}>{item.key}</Text>
                     }
                 />
+
+                <TouchableOpacity onPress={() => {this.showAlertSelected();}}>
+                    <View>
+                        <Text>发射点发射点</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <AlertSelect ref={(dialog)=>{
+                    this.dialog = dialog;
+                }} />
             </View>
         )
     }
